@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+}
+.navbar{
+    background-color: salmon;
+    color: brown;
+    padding: 20px;
+}
