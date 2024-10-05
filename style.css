@@ -1,8 +1,92 @@
 *{
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    
 }
 .navbar{
+    text-align: center;
+    background-color: green;
+    color: wheat;
+    padding: 20px;
+    
+}
+
+.navbar1{
+    text-align: center;
+    background-color: green;
+    color: wheat;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    column-gap: 5px;
+}
+
+
+.headnav{
+    text-align: center;
     background-color: salmon;
     color: brown;
     padding: 20px;
 }
+
+.center{
+    text-align: center;
+}
+
+.lastnav{
+    text-align: end;
+    text-align: center;
+    background-color: green;
+    color: wheat;
+    padding: 20px;
+    position: relative; 
+}
+.img {
+    text-align: center;
+}
+
+.button{
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+}
+
+.button1{
+    background-color: wheat;
+    color: black;
+    border: 2px solid green;
+    width: 200px;
+    height: 75px;
+}
+
+.button1:hover{
+    background-color: green;
+    color: wheat;
+    border: 2px solid green;
+}
+
+.button2{
+    background-color: wheat;
+    color: black;
+    border: 2px solid green;
+    width: 100 px;
+    height: 50 px ;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+  }
+
+
