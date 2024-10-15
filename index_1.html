@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="labcss.css">
+</head>
+<body>
+    <div class="main"><h1 id="username">Username</h1></div>
+    <div class="center">
+        <div id="proflie" style="position: relative; width: 183px; height: 183px; background-image: url(https://th.bing.com/th/id/OIP.b4iuUV8v5eQxEqXmA3Py5wHaEK?rs=1&pid=ImgDetMain); background-position: center; background-size: cover; border-radius: 100%;">
+            <div style="position: absolute; right: 1px; bottom: 0px; height: 40px; width: 40px; background-color: red; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; ">1 </div></div>
+    </div>
+    <br>
+    <br>
+    <div class = "center">
+        <label for="">Username :&nbsp;</label><input type="text" placeholder="Enter" id="input"><button onclick="setUsername()">Set</button>
+    </div>
+    <br>
+    <div class = "center">
+        <label for="">Userprofile :&nbsp;</label><input type="text" placeholder="Enter" id="image"><button onclick="setImage()">Set</button>
+    </div>
+
+    <h2 class="center">Phone Number List</h2>
+    <div class="center">
+        <input type="text" placeholder="Name" id="name">&nbsp;&nbsp;
+        <input type="text" placeholder="Tel" id="tel">&nbsp;&nbsp;
+        <button onclick="addTable()">Add</button>&nbsp;&nbsp;
+        <button onclick="saveCSV()">Export</button>
+    </div>
+    <br><br>
+    <div class="center">
+        <table id="phoneTable">
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const username = document.getElementById("username");
+        const input = document.getElementById("input");
+        const proflie = document.getElementById("proflie");
+        console.log(input.value);
+        let table = document.getElementById("phoneTable");
+        let count = 0;
+        let phonenumber = [];
+        
+        username.textContent="Krittaphass U-hom 67070002";
+        
+        function setUsername(){
+            console.log(input.value);
+            username.textContent = input.value;
+            input.value = "";
+        };
+        function setImage(){
+            proflie.style.backgroundImage = "url(" + image.value + ")";
+        };
+        function createElement(){
+            const a = document.createElement("p")
+            a.textContent = "Hi";
+            document.getElementById("parent")
+
+        };
+        function addTable() {
+        count += 1;
+        const row = document.createElement("tr");
+
+        const cellNo = document.createElement("td");
+        const cellName = document.createElement("td");
+        const cellTel = document.createElement("td");
+
+        cellNo.textContent = count;
+        cellName.textContent = document.getElementById("name").value;
+        cellTel.textContent = document.getElementById("tel").value;
+
+        row.appendChild(cellNo);
+        row.appendChild(cellName);
+        row.appendChild(cellTel);
+
+        table.appendChild(row);
+
+        let arr = [];
+        arr.push(count);
+        arr.push(document.getElementById("name").value);
+        arr.push(document.getElementById("tel").value);
+
+        phonenumber.push(arr);
+        console.log(phonenumber);
+
+        document.getElementById("name").value = "";
+        document.getElementById("tel").value = "";
+    };
+
+    function saveCSV() {
+        const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "data.csv");
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    function myFunction() {
+        location.href = "https://github.com/Jaturapat-Buak";
+    };
+    </script>
+</body>
+</html>
